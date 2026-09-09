@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Muhammad Faiz Alam — Backend Software Engineer specializing in Java, Spring Boot, REST APIs, MySQL, and fintech systems.">
+<meta name="author" content="Muhammad Faiz Alam">
+<meta name="theme-color" content="#0E1318">
+<meta property="og:title" content="Muhammad Faiz Alam — Backend Software Engineer">
+<meta property="og:description" content="Java · Spring Boot · MySQL · REST APIs — building toward fintech and digital payments.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230E1318'/%3E%3Ctext x='32' y='42' font-family='Arial' font-size='26' font-weight='700' fill='%2349C5B6' text-anchor='middle'%3EFA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<title>Muhammad Faiz Alam — Backend Software Engineer</title>
+<style>
+  :root{
+    --bg:#0E1318;
+    --panel:#151C24;
+    --panel-line:#232D38;
+    --text:#E7EBEE;
+    --muted:#8C9BA8;
+    --accent:#49C5B6;
+    --accent-dim:#2E6F68;
+    --amber:#E8A33D;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'IBM Plex Sans',-apple-system,Segoe UI,sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.brand{font-family:'Space Grotesk','IBM Plex Sans',sans-serif;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:960px;margin:0 auto;padding:0 28px;}
+
+  /* ---------- reveal-on-scroll ---------- */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+  .hero .reveal:nth-child(1){transition-delay:.05s;}
+  .hero .reveal:nth-child(2){transition-delay:.15s;}
+  .hero .reveal:nth-child(3){transition-delay:.28s;}
+  .hero .reveal:nth-child(4){transition-delay:.4s;}
+  .hero .reveal:nth-child(5){transition-delay:.5s;}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+  }
+
+  /* ---------- SCROLL PROGRESS ---------- */
+  #scrollProgress{
+    position:fixed;top:0;left:0;height:2px;width:0%;
+    background:var(--accent);z-index:60;transition:width .1s linear;
+  }
+
+  /* ---------- FLOATING SOCIAL RAIL ---------- */
+  .rail{
+    position:fixed;left:32px;bottom:0;z-index:40;
+    display:flex;flex-direction:column;align-items:center;gap:18px;
+  }
+  .rail a{color:var(--muted);transition:color .15s, transform .15s;}
+  .rail a:hover{color:var(--accent);transform:translateY(-3px);}
+  .rail .line{width:1px;height:80px;background:var(--panel-line);}
+  @media (max-width:1180px){.rail{display:none;}}
+
+  .rail-right{
+    position:fixed;right:32px;bottom:0;z-index:40;
+    display:flex;flex-direction:column;align-items:center;gap:14px;
+  }
+  .rail-right a{color:var(--muted);font-size:.82rem;letter-spacing:.04em;writing-mode:vertical-rl;transition:color .15s;}
+  .rail-right a:hover{color:var(--accent);}
+  .rail-right .line{width:1px;height:80px;background:var(--panel-line);}
+  @media (max-width:1180px){.rail-right{display:none;}}
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(14,19,24,.88);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--panel-line);
+  }
+  nav{display:flex;align-items:center;justify-content:space-between;height:64px;position:relative;}
+  .brand{font-weight:600;font-size:1.05rem;letter-spacing:.01em;}
+  .brand span{color:var(--accent);}
+  .nav-links{display:flex;gap:28px;font-size:.92rem;color:var(--muted);}
+  .nav-links a{padding:4px 0;border-bottom:1px solid transparent;transition:color .15s,border-color .15s;}
+  .nav-links a:hover{color:var(--text);}
+  .nav-links a.active{color:var(--accent);border-color:var(--accent);}
+  .nav-toggle{display:none;background:none;border:0;color:var(--text);font-size:1.4rem;cursor:pointer;line-height:1;}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:100px 0 76px;border-bottom:1px solid var(--panel-line);position:relative;overflow:hidden;}
+  .blob{
+    position:absolute;border-radius:50%;filter:blur(70px);opacity:.35;pointer-events:none;z-index:0;
+    animation:drift 16s ease-in-out infinite alternate;
+  }
+  .blob-a{width:340px;height:340px;background:var(--accent);top:-120px;right:-80px;}
+  .blob-b{width:260px;height:260px;background:var(--amber);bottom:-140px;left:-60px;opacity:.18;animation-delay:-6s;}
+  @keyframes drift{
+    0%{transform:translate(0,0) scale(1);}
+    100%{transform:translate(-30px,30px) scale(1.12);}
+  }
+  .hero .wrap{position:relative;z-index:1;}
+  @media (prefers-reduced-motion: reduce){ .blob{animation:none;} }
+  .hero-top{display:flex;align-items:center;gap:26px;margin-bottom:30px;}
+  .avatar{
+    width:96px;height:96px;border-radius:50%;flex-shrink:0;
+    background:linear-gradient(145deg,var(--accent-dim),var(--panel));
+    border:1px solid var(--panel-line);
+    display:flex;align-items:center;justify-content:center;
+    overflow:hidden;position:relative;
+    animation:pulse-ring 3s ease-in-out infinite;
+    transition:transform .3s ease, box-shadow .3s ease;
+  }
+  .avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
+  .avatar-fallback{
+    display:none;width:100%;height:100%;align-items:center;justify-content:center;
+    font-family:'Space Grotesk',sans-serif;font-size:1.7rem;font-weight:600;color:var(--accent);
+  }
+  .avatar:hover{
+    transform:perspective(400px) rotateY(-6deg) rotateX(3deg) scale(1.03);
+    box-shadow:0 0 0 3px rgba(73,197,182,.25);
+  }
+  @media (prefers-reduced-motion: reduce){ .avatar:hover{transform:none;} }
+  @keyframes pulse-ring{
+    0%,100%{box-shadow:0 0 0 0 rgba(73,197,182,.28);}
+    50%{box-shadow:0 0 0 10px rgba(73,197,182,0);}
+  }
+  @media (prefers-reduced-motion: reduce){ .avatar{animation:none;} }
+  .hero-kicker{color:var(--accent);font-size:.95rem;font-weight:500;}
+  .hero h1{font-size:clamp(2.2rem,5vw,3.4rem);font-weight:600;line-height:1.12;max-width:15ch;margin-top:8px;}
+  .hero p{margin-top:22px;max-width:58ch;color:var(--muted);font-size:1.08rem;}
+  .hero-meta{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px 22px;font-size:.92rem;color:var(--muted);}
+  .hero-meta b{color:var(--text);font-weight:500;}
+  .hero-actions{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    padding:12px 22px;border-radius:6px;font-size:.94rem;font-weight:500;
+    border:1px solid var(--panel-line);transition:border-color .15s, background .15s, transform .15s;
+    font-family:inherit;background:transparent;color:inherit;cursor:pointer;display:inline-block;
+  }
+  .btn-primary{background:var(--accent);color:#08201D;border-color:var(--accent);}
+  .btn-primary:hover{background:#5cd5c6;transform:translateY(-1px);}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px);}
+
+  /* ---------- SECTION HEADS ---------- */
+  section{padding:68px 0;border-bottom:1px solid var(--panel-line);}
+  .section-head{display:flex;align-items:baseline;gap:14px;margin-bottom:34px;}
+  .section-head .idx{color:var(--accent-dim);font-family:'Space Grotesk',sans-serif;font-size:.95rem;}
+  .section-head h2{font-size:1.5rem;font-weight:600;}
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;}
+  .about-grid p{color:var(--muted);margin-bottom:16px;}
+  .about-grid p:last-child{margin-bottom:0;}
+  .langs{display:flex;flex-direction:column;gap:12px;}
+  .lang-row{display:flex;justify-content:space-between;font-size:.94rem;padding:10px 0;border-bottom:1px solid var(--panel-line);}
+  .lang-row:last-child{border-bottom:0;}
+  .lang-row b{font-weight:500;}
+  .lang-row span{color:var(--muted);}
+
+  /* ---------- SKILLS ---------- */
+  .skill-groups{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .skill-group h3{font-size:.85rem;color:var(--accent);margin-bottom:14px;font-weight:500;}
+  .skill-group ul{list-style:none;display:flex;flex-direction:column;gap:9px;}
+  .skill-group li{color:var(--muted);font-size:.94rem;padding-left:14px;position:relative;transition:color .18s, transform .18s;}
+  .skill-group li::before{content:"";position:absolute;left:0;top:9px;width:5px;height:5px;background:var(--accent-dim);border-radius:50%;transition:background .18s;}
+  .skill-group li:hover{color:var(--text);transform:translateX(4px);}
+  .skill-group li:hover::before{background:var(--accent);}
+
+  /* ---------- EXPERIENCE ---------- */
+  .exp-row{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:22px 0;border-bottom:1px solid var(--panel-line);}
+  .exp-row:last-child{border-bottom:0;}
+  .exp-time{color:var(--accent-dim);font-family:'Space Grotesk',sans-serif;font-size:.9rem;}
+  .exp-body h3{font-size:1.02rem;font-weight:600;}
+  .exp-body .exp-org{color:var(--accent);font-size:.9rem;margin:2px 0 8px;}
+  .exp-body p{color:var(--muted);font-size:.94rem;max-width:64ch;}
+
+  /* ---------- PROJECTS ---------- */
+  .project{
+    background:var(--panel);border:1px solid var(--panel-line);border-radius:10px;
+    padding:30px 32px;margin-bottom:20px;
+    transition:border-color .25s, transform .25s, box-shadow .25s;
+  }
+  .project:hover{
+    border-color:var(--accent-dim);
+    transform:translateY(-4px);
+    box-shadow:0 16px 32px -20px rgba(73,197,182,.35);
+  }
+  .project:last-child{margin-bottom:0;}
+  .project-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;}
+  .project-top h3{font-size:1.2rem;font-weight:600;}
+  .tag{
+    font-size:.76rem;font-weight:500;padding:4px 10px;border-radius:20px;
+    border:1px solid var(--accent-dim);color:var(--accent);white-space:nowrap;
+  }
+  .tag.progress{border-color:#5a4a26;color:var(--amber);}
+  .project p.desc{color:var(--muted);margin:14px 0 18px;max-width:70ch;}
+  .stack{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
+  .chip{font-size:.78rem;color:var(--muted);border:1px solid var(--panel-line);padding:5px 10px;border-radius:5px;}
+  .project-links{display:flex;gap:18px;font-size:.88rem;}
+  .project-links a{color:var(--accent);}
+  .project-links a:hover{text-decoration:underline;}
+
+  /* ---------- EDUCATION ---------- */
+  .edu-row{display:flex;gap:24px;padding:20px 0;border-bottom:1px solid var(--panel-line);}
+  .edu-row:last-child{border-bottom:0;}
+  .edu-year{color:var(--accent-dim);font-family:'Space Grotesk',sans-serif;font-size:.9rem;min-width:96px;flex-shrink:0;}
+  .edu-body h3{font-size:1.02rem;font-weight:600;margin-bottom:4px;}
+  .edu-body p{color:var(--muted);font-size:.92rem;}
+
+  /* ---------- CONTACT ---------- */
+  .contact{border-bottom:0;}
+  .contact-inner{
+    background:var(--panel);border:1px solid var(--panel-line);border-radius:12px;
+    padding:52px 40px;text-align:center;
+  }
+  .contact-inner h2{font-size:1.7rem;font-weight:600;margin-bottom:12px;}
+  .contact-inner p{color:var(--muted);max-width:48ch;margin:0 auto 30px;}
+  .contact-links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
+
+  footer{padding:28px 0;text-align:center;color:var(--muted);font-size:.85rem;}
+
+  @media (max-width:760px){
+    .nav-links{
+      position:absolute;top:64px;left:0;right:0;
+      flex-direction:column;gap:0;
+      background:var(--panel);border-bottom:1px solid var(--panel-line);
+      max-height:0;overflow:hidden;transition:max-height .25s ease;
+    }
+    .nav-links.open{max-height:320px;}
+    .nav-links a{padding:16px 28px;border-bottom:1px solid var(--panel-line);}
+    .nav-toggle{display:block;}
+    .about-grid,.skill-groups{grid-template-columns:1fr;}
+    .exp-row{grid-template-columns:1fr;gap:6px;}
+    .contact-inner{padding:40px 22px;}
+    .hero-top{gap:18px;}
+    .avatar{width:70px;height:70px;font-size:1.4rem;}
+  }
+</style>
+</head>
+<body>
+<div id="scrollProgress"></div>
+
+<div class="rail">
+  <a href="https://github.com/imfaiz56" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
+  <a href="https://linkedin.com/in/faiz56" target="_blank" rel="noopener" aria-label="LinkedIn">IN</a>
+  <a href="mailto:imfaizalam56@gmail.com" aria-label="Email">@</a>
+  <div class="line"></div>
+</div>
+<div class="rail-right">
+  <a href="mailto:imfaizalam56@gmail.com">imfaizalam56@gmail.com</a>
+  <div class="line"></div>
+</div>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <div class="brand">Muhammad Faiz Alam</div>
+      <div class="nav-links" id="navLinks">
+        <a href="#about" data-nav>About</a>
+        <a href="#skills" data-nav>Skills</a>
+        <a href="#experience" data-nav>Experience</a>
+        <a href="#projects" data-nav>Projects</a>
+        <a href="#education" data-nav>Education</a>
+        <a href="#contact" data-nav>Contact</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="blob blob-a"></div>
+  <div class="blob blob-b"></div>
+  <div class="wrap">
+    <div class="hero-top reveal">
+      <div class="avatar" id="avatar">
+        <img src="1.jpg" alt="Muhammad Faiz Alam" onerror="this.remove(); document.getElementById('avatarFallback').style.display='flex';">
+        <span id="avatarFallback" class="avatar-fallback">FA</span>
+      </div>
+      <div>
+        <div class="hero-kicker">Backend Software Engineer</div>
+      </div>
+    </div>
+    <h1 class="reveal">I build backend systems that hold up under real data.</h1>
+    <p class="reveal">Muhammad Faiz Alam — a Software Technology (DAE) graduate specializing in Java, Spring Boot, and MySQL, working toward backend engineering roles in fintech and digital payments.</p>
+    <div class="hero-meta reveal">
+      <span><b>Based in</b> Talagang, Punjab, Pakistan</span>
+      <span><b>Focus</b> Java · Spring Boot · REST APIs</span>
+      <span><b>Open to</b> backend roles &amp; internships</span>
+    </div>
+    <div class="hero-actions reveal">
+      <a href="#projects" class="btn btn-primary">View projects</a>
+      <a href="#contact" class="btn btn-ghost">Get in touch</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="idx">01</span><h2>About</h2></div>
+    <div class="about-grid reveal">
+      <div>
+        <p>I'm a backend-focused developer from Talagang, Pakistan, with a foundation in Java, Spring Boot, MySQL, and REST API design. My core interest is in how backend systems handle money, state, and access control correctly — which is what's pulling me toward fintech and digital payments.</p>
+        <p>I completed my DAE in Software Technology through the Sino-Pak Dual Diploma Program: two years at NUTECH in Rawalpindi and one year at Guangzhou Vocational and Technical University in China. That mix left me equally comfortable working across local and international teams.</p>
+        <p>I'm currently building out my project portfolio through hands-on internships and independent projects — PrisonTrack, a full-stack management system, and PayTrack, a Spring Security–backed digital wallet, among them.</p>
+      </div>
+      <div class="langs">
+        <div class="lang-row"><b>Urdu</b><span>Fluent</span></div>
+        <div class="lang-row"><b>Punjabi</b><span>Fluent</span></div>
+        <div class="lang-row"><b>English</b><span>Professional</span></div>
+        <div class="lang-row"><b>Chinese</b><span>Basic</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="idx">02</span><h2>Skills</h2></div>
+    <div class="skill-groups reveal">
+      <div class="skill-group">
+        <h3>Backend</h3>
+        <ul>
+          <li>Java</li>
+          <li>Spring Boot</li>
+          <li>Spring Security / JWT</li>
+          <li>Node.js / Express.js</li>
+          <li>REST API design</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Data &amp; Tools</h3>
+        <ul>
+          <li>MySQL / MongoDB</li>
+          <li>Git &amp; GitHub</li>
+          <li>Postman</li>
+          <li>Maven</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Frontend &amp; Other</h3>
+        <ul>
+          <li>HTML / CSS / JavaScript</li>
+          <li>Thymeleaf &amp; Bootstrap</li>
+          <li>Canva &amp; Photoshop</li>
+          <li>CapCut</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="idx">03</span><h2>Experience</h2></div>
+    <div>
+      <div class="exp-row reveal">
+        <div class="exp-time">Sep 2026 – Present</div>
+        <div class="exp-body">
+          <h3>Full-Stack Web Development Intern</h3>
+          <div class="exp-org">Global Institute of Science &amp; Technology (GIST) · Remote</div>
+          <p>Building portfolio-grade full-stack projects, including a production-style Spring Boot application, as part of a structured 4-week remote internship.</p>
+        </div>
+      </div>
+      <div class="exp-row reveal">
+        <div class="exp-time">2026</div>
+        <div class="exp-body">
+          <h3>Backend Development Intern</h3>
+          <div class="exp-org">CodeAlpha · Remote</div>
+          <p>Built and shipped multiple backend projects with Node.js, Express, and MongoDB — including a URL shortener, an event registration system with JWT auth, and a restaurant management system with role-based staff and customer flows.</p>
+        </div>
+      </div>
+      <div class="exp-row reveal">
+        <div class="exp-time">Aug 2026 – Present</div>
+        <div class="exp-body">
+          <h3>Software Development Intern</h3>
+          <div class="exp-org">Arithmatrix Technologies · Remote</div>
+          <p>Building a Contact Management System and a CLI Password Manager with Java, Spring Boot, and MySQL as part of the AVIP 2026 virtual internship program.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="idx">04</span><h2>Projects</h2></div>
+
+    <div class="project reveal">
+      <div class="project-top">
+        <h3>PrisonTrack</h3>
+        <span class="tag">Flagship project</span>
+      </div>
+      <p class="desc">A full-stack Prison Management System built from scratch, with role-based access control, a REST API with token authentication, and an Android companion app for on-the-go access.</p>
+      <div class="stack">
+        <span class="chip">Java</span>
+        <span class="chip">Spring Boot 3.2.5</span>
+        <span class="chip">MySQL 8</span>
+        <span class="chip">Thymeleaf</span>
+        <span class="chip">Bootstrap 5</span>
+        <span class="chip">Android (Retrofit2)</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/imfaiz56" target="_blank" rel="noopener">GitHub repository →</a>
+      </div>
+    </div>
+
+    <div class="project reveal">
+      <div class="project-top">
+        <h3>Restaurant Management System</h3>
+        <span class="tag">CodeAlpha</span>
+      </div>
+      <p class="desc">A full-stack restaurant platform with customer and staff roles, a live cart and ordering flow, table reservations, inventory tracking, and a staff dashboard for check-in/check-out.</p>
+      <div class="stack">
+        <span class="chip">Node.js</span>
+        <span class="chip">Express</span>
+        <span class="chip">MongoDB</span>
+        <span class="chip">JWT Auth</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/imfaiz56/CodeAlpha_RestaurantManagement" target="_blank" rel="noopener">GitHub repository →</a>
+      </div>
+    </div>
+
+    <div class="project reveal">
+      <div class="project-top">
+        <h3>PayTrack</h3>
+        <span class="tag progress">In progress</span>
+      </div>
+      <p class="desc">A digital wallet and bill-payment app currently in development, focused on secure transactions, JWT-based authentication, and role-based access.</p>
+      <div class="stack">
+        <span class="chip">Java</span>
+        <span class="chip">Spring Boot</span>
+        <span class="chip">Spring Security</span>
+        <span class="chip">MySQL</span>
+        <span class="chip">JWT</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="idx">05</span><h2>Education</h2></div>
+    <div class="reveal">
+      <div class="edu-row">
+        <div class="edu-year">2023–2026</div>
+        <div class="edu-body">
+          <h3>DAE Software Technology — Sino-Pak Dual Diploma Program</h3>
+          <p>NUTECH, Islamabad (two years) and Guangzhou Vocational and Technical University, China (one year)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-inner reveal">
+      <h2>Let's work together</h2>
+      <p>Open to backend development roles, internships, and freelance work — especially anything touching fintech or payment systems.</p>
+      <div class="contact-links">
+        <a href="mailto:imfaizalam56@gmail.com" class="btn btn-primary">imfaizalam56@gmail.com</a>
+        <button class="btn btn-ghost" id="copyEmailBtn" type="button">Copy email</button>
+        <a href="https://linkedin.com/in/faiz56" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
+        <a href="https://github.com/imfaiz56" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 Muhammad Faiz Alam. Built with care.</div>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+    navToggle.textContent = isOpen ? '✕' : '☰';
+  });
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.textContent = '☰';
+    });
+  });
+
+  // Scroll-spy: highlight the nav link for the section in view
+  const sections = document.querySelectorAll('section[id]');
+  const navItems = document.querySelectorAll('a[data-nav]');
+  const spy = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navItems.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  sections.forEach(section => spy.observe(section));
+
+  // Reveal-on-scroll (single orchestrated fade-up per element, fires once)
+  const revealItems = document.querySelectorAll('.reveal');
+  const revealer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        revealer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealItems.forEach(item => revealer.observe(item));
+
+  // Copy email to clipboard
+  const copyBtn = document.getElementById('copyEmailBtn');
+  copyBtn.addEventListener('click', () => {
+    navigator.clipboard.writeText('imfaizalam56@gmail.com').then(() => {
+      const original = copyBtn.textContent;
+      copyBtn.textContent = 'Copied ✓';
+      setTimeout(() => { copyBtn.textContent = original; }, 1800);
+    });
+  });
+
+  // Scroll progress bar
+  const progressBar = document.getElementById('scrollProgress');
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    progressBar.style.width = (docHeight > 0 ? (scrollTop / docHeight) * 100 : 0) + '%';
+  });
+
+  // Profile photo: a file named "1.jpg" sits in the same folder as this
+  // index.html and loads automatically into the circular avatar above.
+  // If it's missing, the "FA" fallback is shown instead (handled by the
+  // onerror attribute on the <img> tag in the HTML).
+</script>
+</body>
+</html>
