@@ -5,30 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Muhammad Faiz Alam — Backend Software Engineer specializing in Java, Spring Boot, REST APIs, MySQL, and fintech systems.">
 <meta name="author" content="Muhammad Faiz Alam">
-<meta name="theme-color" content="#0E1318">
+<meta name="theme-color" content="#1a0d38">
 <meta property="og:title" content="Muhammad Faiz Alam — Backend Software Engineer">
 <meta property="og:description" content="Java · Spring Boot · MySQL · REST APIs — building toward fintech and digital payments.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230E1318'/%3E%3Ctext x='32' y='42' font-family='Arial' font-size='26' font-weight='700' fill='%2349C5B6' text-anchor='middle'%3EFA%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231a0d38'/%3E%3Ctext x='32' y='42' font-family='Arial' font-size='26' font-weight='700' fill='%23ff8fb8' text-anchor='middle'%3EFA%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <title>Muhammad Faiz Alam — Backend Software Engineer</title>
 <style>
   :root{
-    --bg:#0E1318;
-    --panel:#151C24;
-    --panel-line:#232D38;
-    --text:#E7EBEE;
-    --muted:#8C9BA8;
-    --accent:#49C5B6;
-    --accent-dim:#2E6F68;
-    --amber:#E8A33D;
+    --bg:#1a0d38;
+    --panel:#26134f;
+    --panel-line:#3f2680;
+    --text:#fff4f9;
+    --muted:#c7b8ea;
+    --accent:#ff8fb8;
+    --accent-dim:#c0518c;
+    --amber:#ffc94d;
+    --teal:#2dd4bf;
+    --sky:#5cc8ff;
+    --grad:linear-gradient(90deg,#ff8fb8,#ffc94d);
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   html{scroll-behavior:smooth;}
   body{
-    background:var(--bg);
+    background:radial-gradient(circle at 90% 0%,#4a1f94 0,transparent 420px),radial-gradient(circle at 0% 60%,#5a1d6f 0,transparent 460px),var(--bg);
+    background-attachment:fixed;
     color:var(--text);
     font-family:'IBM Plex Sans',-apple-system,Segoe UI,sans-serif;
     line-height:1.55;
@@ -54,8 +58,8 @@
 
   /* ---------- SCROLL PROGRESS ---------- */
   #scrollProgress{
-    position:fixed;top:0;left:0;height:2px;width:0%;
-    background:var(--accent);z-index:60;transition:width .1s linear;
+    position:fixed;top:0;left:0;height:3px;width:0%;
+    background:var(--grad);z-index:60;transition:width .1s linear;
   }
 
   /* ---------- FLOATING SOCIAL RAIL ---------- */
@@ -80,7 +84,7 @@
   /* ---------- NAV ---------- */
   header{
     position:sticky;top:0;z-index:50;
-    background:rgba(14,19,24,.88);
+    background:rgba(26,13,56,.88);
     backdrop-filter:blur(8px);
     border-bottom:1px solid var(--panel-line);
   }
@@ -100,7 +104,8 @@
     animation:drift 16s ease-in-out infinite alternate;
   }
   .blob-a{width:340px;height:340px;background:var(--accent);top:-120px;right:-80px;}
-  .blob-b{width:260px;height:260px;background:var(--amber);bottom:-140px;left:-60px;opacity:.18;animation-delay:-6s;}
+  .blob-b{width:280px;height:280px;background:var(--amber);bottom:-140px;left:-60px;opacity:.22;animation-delay:-6s;}
+  .blob-c{width:220px;height:220px;background:var(--sky);top:40%;left:45%;opacity:.14;animation-delay:-11s;}
   @keyframes drift{
     0%{transform:translate(0,0) scale(1);}
     100%{transform:translate(-30px,30px) scale(1.12);}
@@ -109,9 +114,9 @@
   @media (prefers-reduced-motion: reduce){ .blob{animation:none;} }
   .hero-top{display:flex;align-items:center;gap:26px;margin-bottom:30px;}
   .avatar{
-    width:96px;height:96px;border-radius:50%;flex-shrink:0;
+    width:100px;height:100px;border-radius:50%;flex-shrink:0;
     background:linear-gradient(145deg,var(--accent-dim),var(--panel));
-    border:1px solid var(--panel-line);
+    border:3px solid transparent;background-clip:padding-box;outline:3px solid var(--accent);outline-offset:3px;
     display:flex;align-items:center;justify-content:center;
     overflow:hidden;position:relative;
     animation:pulse-ring 3s ease-in-out infinite;
@@ -124,16 +129,16 @@
   }
   .avatar:hover{
     transform:perspective(400px) rotateY(-6deg) rotateX(3deg) scale(1.03);
-    box-shadow:0 0 0 3px rgba(73,197,182,.25);
+    box-shadow:0 0 0 3px rgba(255,143,184,.3);
   }
   @media (prefers-reduced-motion: reduce){ .avatar:hover{transform:none;} }
   @keyframes pulse-ring{
-    0%,100%{box-shadow:0 0 0 0 rgba(73,197,182,.28);}
-    50%{box-shadow:0 0 0 10px rgba(73,197,182,0);}
+    0%,100%{box-shadow:0 0 0 0 rgba(255,143,184,.35);}
+    50%{box-shadow:0 0 0 10px rgba(255,143,184,0);}
   }
   @media (prefers-reduced-motion: reduce){ .avatar{animation:none;} }
-  .hero-kicker{color:var(--accent);font-size:.95rem;font-weight:500;}
-  .hero h1{font-size:clamp(2.2rem,5vw,3.4rem);font-weight:600;line-height:1.12;max-width:15ch;margin-top:8px;}
+  .hero-kicker{display:inline-block;color:#2b1259;background:var(--grad);font-size:.82rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:5px 14px;border-radius:20px;}
+  .hero h1{font-size:clamp(2.2rem,5vw,3.4rem);font-weight:700;line-height:1.12;max-width:15ch;margin-top:8px;background:linear-gradient(90deg,#fff4f9 0%,#ff8fb8 55%,#ffc94d 100%);-webkit-background-clip:text;background-clip:text;color:transparent;}
   .hero p{margin-top:22px;max-width:58ch;color:var(--muted);font-size:1.08rem;}
   .hero-meta{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px 22px;font-size:.92rem;color:var(--muted);}
   .hero-meta b{color:var(--text);font-weight:500;}
@@ -143,15 +148,16 @@
     border:1px solid var(--panel-line);transition:border-color .15s, background .15s, transform .15s;
     font-family:inherit;background:transparent;color:inherit;cursor:pointer;display:inline-block;
   }
-  .btn-primary{background:var(--accent);color:#08201D;border-color:var(--accent);}
-  .btn-primary:hover{background:#5cd5c6;transform:translateY(-1px);}
+  .btn-primary{background:var(--grad);color:#2b1259;border-color:transparent;font-weight:600;}
+  .btn-primary:hover{filter:brightness(1.08);transform:translateY(-1px);}
   .btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px);}
 
   /* ---------- SECTION HEADS ---------- */
   section{padding:68px 0;border-bottom:1px solid var(--panel-line);}
   .section-head{display:flex;align-items:baseline;gap:14px;margin-bottom:34px;}
-  .section-head .idx{color:var(--accent-dim);font-family:'Space Grotesk',sans-serif;font-size:.95rem;}
-  .section-head h2{font-size:1.5rem;font-weight:600;}
+  .section-head .idx{color:var(--amber);font-family:'Space Grotesk',sans-serif;font-size:.95rem;}
+  .section-head h2{font-size:1.6rem;font-weight:700;}
+  .section-head::after{content:'';flex:1;height:2px;border-radius:2px;background:linear-gradient(90deg,#ff8fb8aa,transparent);align-self:center;}
 
   /* ---------- ABOUT ---------- */
   .about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;}
@@ -165,23 +171,24 @@
 
   /* ---------- SKILLS ---------- */
   .skill-groups{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-  .skill-group h3{font-size:.85rem;color:var(--accent);margin-bottom:14px;font-weight:500;}
+  .skill-group h3{font-size:.85rem;color:var(--amber);margin-bottom:14px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;}
   .skill-group ul{list-style:none;display:flex;flex-direction:column;gap:9px;}
   .skill-group li{color:var(--muted);font-size:.94rem;padding-left:14px;position:relative;transition:color .18s, transform .18s;}
-  .skill-group li::before{content:"";position:absolute;left:0;top:9px;width:5px;height:5px;background:var(--accent-dim);border-radius:50%;transition:background .18s;}
+  .skill-group li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;background:var(--accent-dim);border-radius:50%;transition:background .18s;}
   .skill-group li:hover{color:var(--text);transform:translateX(4px);}
   .skill-group li:hover::before{background:var(--accent);}
 
   /* ---------- EXPERIENCE ---------- */
   .exp-row{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:22px 0;border-bottom:1px solid var(--panel-line);}
   .exp-row:last-child{border-bottom:0;}
-  .exp-time{color:var(--accent-dim);font-family:'Space Grotesk',sans-serif;font-size:.9rem;}
+  .exp-time{color:var(--teal);font-family:'Space Grotesk',sans-serif;font-size:.9rem;}
   .exp-body h3{font-size:1.02rem;font-weight:600;}
   .exp-body .exp-org{color:var(--accent);font-size:.9rem;margin:2px 0 8px;}
   .exp-body p{color:var(--muted);font-size:.94rem;max-width:64ch;}
 
   /* ---------- PROJECTS ---------- */
   .project{
+    border-top:4px solid var(--accent);
     background:var(--panel);border:1px solid var(--panel-line);border-radius:10px;
     padding:30px 32px;margin-bottom:20px;
     transition:border-color .25s, transform .25s, box-shadow .25s;
@@ -189,16 +196,29 @@
   .project:hover{
     border-color:var(--accent-dim);
     transform:translateY(-4px);
-    box-shadow:0 16px 32px -20px rgba(73,197,182,.35);
+    box-shadow:0 16px 32px -20px rgba(255,143,184,.35);
   }
   .project:last-child{margin-bottom:0;}
+  .project-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px;}
+  .project-grid .project{margin-bottom:0;padding:24px 26px;}
+  .project-grid .project:nth-child(4n+1){border-top-color:var(--accent);}
+  .project-grid .project:nth-child(4n+2){border-top-color:var(--amber);}
+  .project-grid .project:nth-child(4n+3){border-top-color:var(--teal);}
+  .project-grid .project:nth-child(4n){border-top-color:var(--sky);}
+  .project-grid h3{font-size:1.05rem !important;}
+  .project-grid p.desc{font-size:.92rem;margin:10px 0 14px;}
+  .chip:nth-child(3n+1){border-color:#7a5f1f;}
+  .chip:nth-child(3n+2){border-color:#8f3f6e;}
+  .chip:nth-child(3n){border-color:#2f7aa6;}
   .project-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;}
   .project-top h3{font-size:1.2rem;font-weight:600;}
   .tag{
     font-size:.76rem;font-weight:500;padding:4px 10px;border-radius:20px;
     border:1px solid var(--accent-dim);color:var(--accent);white-space:nowrap;
   }
-  .tag.progress{border-color:#5a4a26;color:var(--amber);}
+  .tag.progress{border-color:#7a5f1f;color:var(--amber);}
+  .tag.alt{border-color:#2f8f86;color:var(--teal);}
+  .tag.blue{border-color:#2f7aa6;color:var(--sky);}
   .project p.desc{color:var(--muted);margin:14px 0 18px;max-width:70ch;}
   .stack{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
   .chip{font-size:.78rem;color:var(--muted);border:1px solid var(--panel-line);padding:5px 10px;border-radius:5px;}
@@ -209,23 +229,24 @@
   /* ---------- EDUCATION ---------- */
   .edu-row{display:flex;gap:24px;padding:20px 0;border-bottom:1px solid var(--panel-line);}
   .edu-row:last-child{border-bottom:0;}
-  .edu-year{color:var(--accent-dim);font-family:'Space Grotesk',sans-serif;font-size:.9rem;min-width:96px;flex-shrink:0;}
+  .edu-year{color:var(--teal);font-family:'Space Grotesk',sans-serif;font-size:.9rem;min-width:96px;flex-shrink:0;}
   .edu-body h3{font-size:1.02rem;font-weight:600;margin-bottom:4px;}
   .edu-body p{color:var(--muted);font-size:.92rem;}
 
   /* ---------- CONTACT ---------- */
   .contact{border-bottom:0;}
   .contact-inner{
-    background:var(--panel);border:1px solid var(--panel-line);border-radius:12px;
+    background:linear-gradient(135deg,#3a1a7a,#7a2a8f 60%,#c43a82);border:1px solid var(--panel-line);border-radius:12px;
     padding:52px 40px;text-align:center;
   }
   .contact-inner h2{font-size:1.7rem;font-weight:600;margin-bottom:12px;}
-  .contact-inner p{color:var(--muted);max-width:48ch;margin:0 auto 30px;}
+  .contact-inner p{color:#f4e6ff;max-width:48ch;margin:0 auto 30px;}
   .contact-links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
 
   footer{padding:28px 0;text-align:center;color:var(--muted);font-size:.85rem;}
 
   @media (max-width:760px){
+    .project-grid{grid-template-columns:1fr;}
     .nav-links{
       position:absolute;top:64px;left:0;right:0;
       flex-direction:column;gap:0;
@@ -277,6 +298,7 @@
 <section class="hero">
   <div class="blob blob-a"></div>
   <div class="blob blob-b"></div>
+  <div class="blob blob-c"></div>
   <div class="wrap">
     <div class="hero-top reveal">
       <div class="avatar" id="avatar">
@@ -308,7 +330,7 @@
       <div>
         <p>I'm a backend-focused developer from Talagang, Pakistan, with a foundation in Java, Spring Boot, MySQL, and REST API design. My core interest is in how backend systems handle money, state, and access control correctly — which is what's pulling me toward fintech and digital payments.</p>
         <p>I completed my DAE in Software Technology through the Sino-Pak Dual Diploma Program: two years at NUTECH in Islamabad and one year at Guangzhou Vocational and Technical University in China. That mix left me equally comfortable working across local and international teams.</p>
-        <p>I'm currently building out my project portfolio through hands-on internships and independent projects — PrisonTrack, a full-stack management system, and PayTrack, a Spring Security–backed digital wallet, among them.</p>
+        <p>I've built my project portfolio through three internships and independent work — PrisonTrack, a full-stack management system, and PayTrack, a Spring Security–backed digital wallet, among them.</p>
       </div>
       <div class="langs">
         <div class="lang-row"><b>Urdu</b><span>Fluent</span></div>
@@ -347,6 +369,7 @@
         <h3>Frontend &amp; Other</h3>
         <ul>
           <li>HTML / CSS / JavaScript</li>
+          <li>React.js</li>
           <li>Thymeleaf &amp; Bootstrap</li>
           <li>Canva &amp; Photoshop</li>
           <li>CapCut</li>
@@ -361,27 +384,27 @@
     <div class="section-head reveal"><span class="idx">03</span><h2>Experience</h2></div>
     <div>
       <div class="exp-row reveal">
-        <div class="exp-time">Sep 2026 – Present</div>
+        <div class="exp-time">Sep – Oct 2026</div>
+        <div class="exp-body">
+          <h3>Front-End Development Intern</h3>
+          <div class="exp-org">WebEra Solutions PK · Remote</div>
+          <p>Completed a 6-week internship building responsive React.js applications: Cookora, a recipe and cooking platform, and AeroLink, a full flight booking platform with search, seat selection, booking flow and a travel dashboard, deployed live on Vercel.</p>
+        </div>
+      </div>
+      <div class="exp-row reveal">
+        <div class="exp-time">Sep – Oct 2026</div>
         <div class="exp-body">
           <h3>Full-Stack Web Development Intern</h3>
           <div class="exp-org">Global Institute of Science &amp; Technology (GIST) · Remote</div>
-          <p>Building portfolio-grade full-stack projects, including a production-style Spring Boot application, as part of a structured 4-week remote internship.</p>
+          <p>Delivered three full-stack projects: a portfolio website, TaskFlow (Kanban task manager) and PayTrack (digital wallet and bill payment), using Spring Boot, MySQL and JWT.</p>
         </div>
       </div>
       <div class="exp-row reveal">
-        <div class="exp-time">2026</div>
+        <div class="exp-time">Sep 2026</div>
         <div class="exp-body">
           <h3>Backend Development Intern</h3>
           <div class="exp-org">CodeAlpha · Remote</div>
-          <p>Built and shipped multiple backend projects with Node.js, Express, and MongoDB — including a URL shortener, an event registration system with JWT auth, and a restaurant management system with role-based staff and customer flows.</p>
-        </div>
-      </div>
-      <div class="exp-row reveal">
-        <div class="exp-time">Aug 2026 – Present</div>
-        <div class="exp-body">
-          <h3>Software Development Intern</h3>
-          <div class="exp-org">Arithmatrix Technologies · Remote</div>
-          <p>Building a Contact Management System and a CLI Password Manager with Java, Spring Boot, and MySQL as part of the AVIP 2026 virtual internship program.</p>
+          <p>Built and shipped backend projects with Node.js, Express and MongoDB: a URL shortener, an event registration system with JWT auth, and a restaurant management system with role-based staff and customer flows. Received a Certificate of Completion and a Letter of Recommendation.</p>
         </div>
       </div>
     </div>
@@ -393,54 +416,58 @@
     <div class="section-head reveal"><span class="idx">04</span><h2>Projects</h2></div>
 
     <div class="project reveal">
-      <div class="project-top">
-        <h3>PrisonTrack</h3>
-        <span class="tag">Flagship project</span>
-      </div>
+      <div class="project-top"><h3>PrisonTrack</h3><span class="tag">Flagship project</span></div>
       <p class="desc">A full-stack Prison Management System built from scratch, with role-based access control, a REST API with token authentication, and an Android companion app for on-the-go access.</p>
-      <div class="stack">
-        <span class="chip">Java</span>
-        <span class="chip">Spring Boot 3.2.5</span>
-        <span class="chip">MySQL 8</span>
-        <span class="chip">Thymeleaf</span>
-        <span class="chip">Bootstrap 5</span>
-        <span class="chip">Android (Retrofit2)</span>
-      </div>
-      <div class="project-links">
-        <a href="https://github.com/imfaiz56" target="_blank" rel="noopener">GitHub repository →</a>
-      </div>
+      <div class="stack"><span class="chip">Java</span><span class="chip">Spring Boot 3.2.5</span><span class="chip">MySQL 8</span><span class="chip">Thymeleaf</span><span class="chip">Bootstrap 5</span><span class="chip">Android (Retrofit2)</span></div>
+      <div class="project-links"><a href="https://github.com/imfaiz56" target="_blank" rel="noopener">GitHub repository →</a></div>
     </div>
 
+    <div class="project-grid">
     <div class="project reveal">
-      <div class="project-top">
-        <h3>Restaurant Management System</h3>
-        <span class="tag">CodeAlpha</span>
-      </div>
-      <p class="desc">A full-stack restaurant platform with customer and staff roles, a live cart and ordering flow, table reservations, inventory tracking, and a staff dashboard for check-in/check-out.</p>
-      <div class="stack">
-        <span class="chip">Node.js</span>
-        <span class="chip">Express</span>
-        <span class="chip">MongoDB</span>
-        <span class="chip">JWT Auth</span>
-      </div>
-      <div class="project-links">
-        <a href="https://github.com/imfaiz56/CodeAlpha_RestaurantManagement" target="_blank" rel="noopener">GitHub repository →</a>
-      </div>
+      <div class="project-top"><h3>PayTrack</h3><span class="tag alt">GIST</span></div>
+      <p class="desc">A digital wallet and bill-payment app with secure JWT login, wallet balance, transaction history, basic fraud flagging and an admin panel.</p>
+      <div class="stack"><span class="chip">Java</span><span class="chip">Spring Boot</span><span class="chip">MySQL</span><span class="chip">JWT</span></div>
     </div>
-
     <div class="project reveal">
-      <div class="project-top">
-        <h3>PayTrack</h3>
-        <span class="tag progress">In progress</span>
-      </div>
-      <p class="desc">A digital wallet and bill-payment app currently in development, focused on secure transactions, JWT-based authentication, and role-based access.</p>
-      <div class="stack">
-        <span class="chip">Java</span>
-        <span class="chip">Spring Boot</span>
-        <span class="chip">Spring Security</span>
-        <span class="chip">MySQL</span>
-        <span class="chip">JWT</span>
-      </div>
+      <div class="project-top"><h3>AeroLink</h3><span class="tag blue">WebEra</span></div>
+      <p class="desc">A flight management platform: search, date and passenger selection, flight comparison, seat selection, booking flow, confirmation and a travel dashboard.</p>
+      <div class="stack"><span class="chip">React.js</span><span class="chip">Bootstrap 5</span><span class="chip">JavaScript</span></div>
+      <div class="project-links"><a href="https://aerolink-indol.vercel.app/" target="_blank" rel="noopener">Live demo →</a></div>
+    </div>
+    <div class="project reveal">
+      <div class="project-top"><h3>Restaurant Management System</h3><span class="tag">CodeAlpha</span></div>
+      <p class="desc">Customer and staff roles, live cart and ordering, table reservations, inventory tracking and a staff dashboard with check-in/check-out.</p>
+      <div class="stack"><span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">MongoDB</span><span class="chip">JWT</span></div>
+      <div class="project-links"><a href="https://github.com/imfaiz56/CodeAlpha_RestaurantManagement" target="_blank" rel="noopener">GitHub repository →</a></div>
+    </div>
+    <div class="project reveal">
+      <div class="project-top"><h3>Event Registration System</h3><span class="tag">CodeAlpha</span></div>
+      <p class="desc">JWT-authenticated platform where users browse events and register, with live spot tracking to prevent overbooking.</p>
+      <div class="stack"><span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">MongoDB</span><span class="chip">JWT</span></div>
+      <div class="project-links"><a href="https://github.com/imfaiz56/CodeAlpha_EventRegistration" target="_blank" rel="noopener">GitHub repository →</a></div>
+    </div>
+    <div class="project reveal">
+      <div class="project-top"><h3>TaskFlow</h3><span class="tag alt">GIST</span></div>
+      <p class="desc">Kanban-style task manager with drag-and-drop boards, subtasks, tags, search/filter and a dashboard with stats.</p>
+      <div class="stack"><span class="chip">Spring Boot</span><span class="chip">MySQL</span><span class="chip">JWT</span><span class="chip">JavaScript</span></div>
+    </div>
+    <div class="project reveal">
+      <div class="project-top"><h3>Cookora</h3><span class="tag blue">WebEra</span></div>
+      <p class="desc">Responsive recipe and cooking platform with category browsing, dish search, ingredients and step-by-step instructions.</p>
+      <div class="stack"><span class="chip">React.js</span><span class="chip">Bootstrap 5</span><span class="chip">Local Storage</span></div>
+    </div>
+    <div class="project reveal">
+      <div class="project-top"><h3>URL Shortener</h3><span class="tag">CodeAlpha</span></div>
+      <p class="desc">Backend service that turns long URLs into short shareable links, with a REST API and a responsive frontend.</p>
+      <div class="stack"><span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">MongoDB</span></div>
+      <div class="project-links"><a href="https://github.com/imfaiz56/CodeAlpha_UrlShortener" target="_blank" rel="noopener">GitHub repository →</a></div>
+    </div>
+    <div class="project reveal">
+      <div class="project-top"><h3>Personal Portfolio</h3><span class="tag alt">GIST</span></div>
+      <p class="desc">The responsive portfolio you are looking at, built with HTML, CSS and JavaScript and deployed on GitHub Pages.</p>
+      <div class="stack"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span></div>
+      <div class="project-links"><a href="https://imfaiz56.github.io/portfolio-website" target="_blank" rel="noopener">Live site →</a></div>
+    </div>
     </div>
   </div>
 </section>
